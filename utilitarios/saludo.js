@@ -4,6 +4,9 @@ saludar=function(){
     let apellido=recuperarTexto("txtApellido");
     let edad=recuperarInt("txtEdad");
     let estatura=recuperarFloat("txtEstatura");
+    let msjBienvenida=("Bienvenido "+nombre+" "+apellido);
+    mostrarTexto("lblResultado",msjBienvenida);
+    mostrarImagen("imgSaludo","./imagenes/saludo.gif");
 }
 recuperarTexto=function(idComponente){
     let componente;
@@ -21,4 +24,14 @@ recuperarFloat=function(idComponente){
     let valorCaja=recuperarTexto(idComponente);
     let valorFlotante=parseFloat(valorCaja);
     return valorFlotante;
+}
+mostrarTexto=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.innerText=mensaje;
+}
+mostrarImagen=function(idComponente,rutaImagen){ 
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.src = rutaImagen;
 }
