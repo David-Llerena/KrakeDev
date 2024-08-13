@@ -13,7 +13,6 @@ calcularSubtotal=function(precio,cantidad){
 }
 calcularTotal=function(subtotal,descuento,iva){
     let valorPagar;
-    let desct=calcularValorDescuento(subtotal,descuento);
-    let valorIva=calcularIVA(subtotal);
-    valorPagar=subtotal-desct+valorIva;
+    valorPagar=subtotal-descuento+iva;
+    return valorPagar;
 }   
