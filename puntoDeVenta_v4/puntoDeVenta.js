@@ -86,6 +86,8 @@ calcularValorTotal = function () {
        */
             
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
+    let resumen="Valor a pagar por "+cantidad+" "+nombreProducto+" con "+porcentajeDescuento+" % de descuento: "+ "USD "+valorTotal;
+    mostrarTexto("lblResumen",resumen);  
     /*
         Ejemplo: 
             Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
@@ -99,5 +101,33 @@ limpiar = function () {
         Dejar todos los textos de los montos con el valor 0.0
         Si funciona, hacer un commit
      */
+    let ceroFloat="0.0";
+    const ceroInt=0;
+/*
+"txtProducto"
+"txtCantidad"
+"txtPrecio"
+"txtPorcentajeDescuento"  
+*/
+  
+mostrarTextoEnCaja("txtProducto","");
+mostrarTextoEnCaja("txtCantidad",0);
+mostrarTextoEnCaja("txtPrecio",ceroFloat);
+mostrarTextoEnCaja("txtPorcentajeDescuento",ceroFloat);
+
+/*
+"lblSubtotal"
+"lblDescuento"
+"lblValorIVA"
+"lblTotal"
+"lblResumen"
+*/
+
+mostrarTexto("lblSubtotal",ceroFloat);  
+mostrarTexto("lblDescuento",ceroFloat);  
+mostrarTexto("lblValorIVA",ceroFloat);  
+mostrarTexto("lblTotal",ceroFloat);  
+mostrarTexto("lblResumen","");  
+
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
