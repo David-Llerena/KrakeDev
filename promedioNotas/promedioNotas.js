@@ -12,4 +12,10 @@ calcularPromedioNotas=function(){
 
     cambiarTexto("lblPromedio",promedio.toFixed(2));
 
+    if(promedio>=7){
+        cambiarImagen("imgPromedio","./imagenes/exito.gif");
+    }else{
+        cambiarImagen("imgPromedio","./imagenes/fracaso.gif");
+    }
+
 }
