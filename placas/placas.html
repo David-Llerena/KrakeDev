@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Placas</title>
+    <link href="placas.css" rel="stylesheet">
+    <script src="placas.js" defer></script>
+    <script src="servicioPlacas.js" defer></script>
+    <script src="utilitarioCadena.js" defer></script>
+    <script src="utilitarios.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">INGRESAR PLACA</h1>
+    </header>
+
+    <main>
+        <div class="cajaPlaca">
+            <input type="text" id="txtPlaca" placeholder="Ingrese la placa" maxlength="8">
+        </div>
+
+        <div class="botones">
+            <button onclick="validarPlaca();" class="boton">VALIDAR</button>
+            <button onclick="limpiar();" class="boton">LIMPIAR</button>
+        </div>
+
+        <section class="seccion-errores">
+            <h2 class="tit" id="lblMensajeErrores">PLACA</h2>
+            <h3 class="contenidoErrores" id="lblErrores"></h3>
+        </section>
+
+        <section>
+            <h2 class="tit">PROVINCIA</h2>
+            <div id="nomProvincia"></div>
+        </section>
+
+        <section>
+            <h2 class="tit">TIPO</h2>
+            <div id="tipoVehiculo"></div>
+        </section>
+
+        <section>
+            <h2 class="tit">PICO Y PLACA</h2>
+            <div id="diaPyP"></div>
+        </section>
+    </main>
+</body>
+</html>
