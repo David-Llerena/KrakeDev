@@ -29,4 +29,6 @@ limpiar=function(){
     mostrarTexto("lblPuntajeComputador",0);
     mostrarTexto("resultadoGanador","");
     mostrarImagen("imgResultado","./imagenes/computador.png");
+    puntosUsuario=0;
+    puntosComputador=0;
 }
