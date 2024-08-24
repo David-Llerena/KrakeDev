@@ -30,3 +30,36 @@ guardarPalabra = function(){
     const div = document.getElementById(`div${posicion}`);
     div.innerHTML = letra;
   }
+
+  validar = function(letra){
+    let letrasEncontradas = 0;
+    for (let char = 0; char < palabraSecreta.length; char++) {
+      const letras = palabraSecreta.charAt(char);
+      if (letras == letra) {
+        mostrarLetra(letra, char);
+        letrasEncontradas += 1;
+        coincidencias += 1;
+      }
+    }
+    if (letrasEncontradas < 1) {
+      alert("La letra no es parte de la palabra");
+      errores += 1;
+      mostrarAhorcado()
+    }
+  }
+
+ingreseLetra = function(){
+    const letra = recuperarTexto("txtLetra");
+    if (esMayuscula(letra)) {
+      validar(letra);
+      intentos += 1
+      if (coincidencias == 5) {
+        mostrarImagen("ahorcadoImagen", "./ganador.gif");
+      }
+      if (intentos == 10) {
+        mostrarImagen("ahorcadoImagen", "./gameOver.gif");
+      }
+    } else {
+      alert("SOLO SE ACEPTAN MAYUSCULAS");
+    }
+  };
