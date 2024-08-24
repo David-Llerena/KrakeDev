@@ -23,3 +23,29 @@ ejecutarPrueba2=function(){
     mensaje=recuperarTexto("txtCadena");
     recorrerCadenaInvertido(mensaje);
 }
+buscarLetra=function(cadena,letra){
+    let letraIterada;
+    let existeLetra=false;
+    for(let i=0;i<cadena.length;i++){
+        letraIterada=cadena.chartAt(i);
+        if(letraIterada==letra){
+            existeLetra=true;
+        }
+    }
+    if(existeLetra==true){
+        return true;
+    }else{
+        return false;
+    }
+}
+contarMayusculas=function(cadena){
+    let letra;
+    let contadorMayusculas;
+    for(let i=0;i<cadena.length;i++){
+        letra=cadena.chartAt(i);
+        if(esMayuscula(letra)){
+            contadorMayusculas++;
+        }
+        console.log(contadorMayusculas);
+    }
+}
