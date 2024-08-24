@@ -9,7 +9,7 @@ esMayuscula = function(caracter){
     }
   }
 
-const guardarPalabra = () => {
+guardarPalabra = function(){
     let sonMayusculas;
     const secreta = recuperarTexto("txtSecreta");
     for (let posicion = 0; posicion < secreta.length; posicion++) {
@@ -24,4 +24,9 @@ const guardarPalabra = () => {
     } else {
       palabraSecreta = secreta;
     }
+  }
+
+  mostrarLetra = function(letra, posicion){
+    const div = document.getElementById(`div${posicion}`);
+    div.innerHTML = letra;
   }
