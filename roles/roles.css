@@ -78,28 +78,6 @@ body{
     align-items: center;
     justify-content: center;
 }
-tbody tr:nth-child(odd) {
-    background-color: #908efc;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #6a51cf;
-  }
-  
-  tbody tr {
-    background-image: url(noise.png);
-  }
-  
-  table {
-    background-color: #0b0c0c;
-    width: 100%;
-  }
-  td{
-    text-align: center;
-  }
-  .areaTabla{
-    margin-top: 20px;
-  }
 .estiloBoton:hover {
     background-color:white; 
     color: #217023;
@@ -185,4 +163,48 @@ tbody tr:nth-child(odd) {
     color:red;
     font-style: italic;
     font-size: 14px;
+}
+
+#contenidoTabla{
+    border-radius: 5px 5px 0 0;
+    border-collapse:collapse;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    min-width: 525px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0.3, 0.25);
+
+}
+.areaTabla{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  /* cabecera */
+#contenidoTabla th {
+    background-color: #217023;
+    color: whitesmoke;
+    text-align:center;
+    font-weight: bold;
+    padding: 12px 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.3, 0.25);
+    border:  black 1px solid ;
+}
+/* cuerpo */
+#contenidoTabla td{
+    padding: 12px 15px;
+    border:  black 1px solid ;
+    text-align: center;
+}
+/* fondo */
+#contenidoTabla tbody tr{
+    border-bottom: 1px solid white;
+}
+#contenidoTabla tbody tr:nth-of-type(odd) {
+    background-color: white;
+}
+#contenidoTabla tbody tr:last-of-type{
+    border-bottom: 2px solid white;
+    border:  black 1px solid ;
 }
