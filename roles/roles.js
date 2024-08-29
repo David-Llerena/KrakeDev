@@ -226,3 +226,15 @@ buscarPorRol=function(){
         alert("EL EMPLEADO NO EXISTE")
     }
 }
+calcularAporteEmpleado=function(sueldo){
+    let aporte;
+    let resultado;
+    aporte=sueldo*9.45
+    resultado=aporte/100
+    return resultado;
+}
+calcularValorAPagar=function(sueldo,aporteIESS,descuento){
+    let valorPagar;
+    valorPagar=sueldo-aporteIESS-descuento
+    return valorPagar;
+}
