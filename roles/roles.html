@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <div class="contenedorBoton">
-                    <input type="button" value="BUSCAR" class="estiloBoton" />
+                    <input type="button" value="BUSCAR" class="estiloBoton" onclick="buscarPorRol();" />
                 </div>
             </div>
 
@@ -147,10 +147,7 @@
                 </div>
                 <div class="botones">
                     <div class="contenedorBoton">
-                        <input type="button" value="CALCULAR" class="estiloBoton" />
-                    </div>
-                    <div class="contenedorBoton">
-                        <input type="button" value="NUEVO" class="estiloBoton"  onclick="ejecutarNuevo();"/>
+                        <input type="button" value="CALCULAR" class="estiloBoton" onclick="calcularRol();" />
                     </div>
                 </div>
                 <div class="ingresoDatos">
@@ -171,11 +168,11 @@
                 </div>
                 <div class="botones">
                     <div class="contenedorBoton">
-                        <input type="button" value="GUARDAR" class="estiloBoton" />
+                        <input type="button" value="GUARDAR" class="estiloBoton" id="botonGuardar" onclick="guardarRol();"/>
                     </div>
                 </div>
             </div>
-            <div class="logoEscuela">
+             <div class="logoEscuela">
                 <img src="./imagenes/roles.png" width="80%" />
             </div>
         </div>
