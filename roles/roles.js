@@ -184,6 +184,7 @@ deshabilitarDatos=function(){
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
 }
+// Se agrega Parte 4 modificar empleado
 ejecutarBusqueda=function(){
     let valorCedula;
     let empleado;
@@ -208,6 +209,6 @@ limpiar=function(){
     mostrarTextoEnCaja("txtNombre","");
     mostrarTextoEnCaja("txtApellido","");
     mostrarTextoEnCaja("txtSueldo","");
-    esNuevo=false
+    esNuevo=false;
     deshabilitarDatos();
 }
