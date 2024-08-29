@@ -238,3 +238,16 @@ calcularValorAPagar=function(sueldo,aporteIESS,descuento){
     valorPagar=sueldo-aporteIESS-descuento
     return valorPagar;
 }
+calcularRol=function(){
+    let sueldo=recuperarFloatDiv("infoSueldo");
+    let valorDescuento=recuperarFloat("txtDescuentos");
+    if( valorDescuento != isNaN(valorDescuento)){
+        if(valorDescuento>=0 && sueldo>valorDescuento){
+            let aporte=calcularAporteEmpleado(sueldo);
+            mostrarTexto("infoIESS",aporte);
+            let totalPagar=calcularValorAPagar(sueldo,aporte,valorDescuento);
+            mostrarTexto("infoPago",totalPagar);
+            habilitarComponente("botonGuardar");
+        }
+    }
+}
