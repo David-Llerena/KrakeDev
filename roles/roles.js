@@ -321,3 +321,49 @@ guardarRol=function(){
     mostrarTotales();
     
 }
+mostrarRoles=function(){
+    let cmpTabla=document.getElementById("tablaResumen" );
+    let contenidoTabla="<table id=\"contenidoTabla\"><tr>"+
+    "<th>CEDULA</th>"+
+    "<th>NOMBRE</th>"+
+    "<th>VALOR A PAGAR</th>"+
+    "<th>APORTE EMPLEADO</th>"+
+    "<th>APORTE EMPLEADOR</th>"+
+    "</tr>"
+    let elementoRoles;
+    for(let i=0;i<roles.length;i++){
+        elementoRoles=roles[i];
+        contenidoTabla+=
+        "<tr><td>"+elementoRoles.cedula+"</td>"
+        +"<td>"+elementoRoles.nombre+"</td>"
+        +"<td>"+elementoRoles.valorAPagar+"</td>"
+        +"<td>"+elementoRoles.aporteEmpleado+"</td>"
+        +"<td>"+elementoRoles.aporteEmpleador+"</td>"
+        +"</tr>"
+    }
+    contenidoTabla+="</table>"
+    cmpTabla.innerHTML=contenidoTabla;
+}
+mostrarTotales=function(){
+    let totalEmpleadoFloat;
+    let totalEmpleado;
+    let totalEmpleadorFloat;
+    let totalEmpleador;
+    let totalAPagar;
+    let toltalNomina;
+    for(let i=0;i<roles.length;i++){
+        totalEmpleado=roles[i];
+        totalEmpleadoFloat=parseFloat(totalEmpleado.aporteEmpleado);
+        totalEmpleadoFloat=totalEmpleadoFloat;
+        totalEmpleador=roles[i];
+        totalEmpleadorFloat=parseFloat(totalEmpleador.aporteEmpleador);
+        totalEmpleadorFloat=totalEmpleadorFloat;
+        totalAPagar=totalEmpleadoFloat+totalEmpleadorFloat;
+    }
+    toltalNomina=totalAPagar+totalEmpleadoFloat+totalEmpleadorFloat;
+    mostrarTexto("infoTotalPago",totalAPagar);
+    mostrarTexto("infoAporteEmpresa",totalEmpleadorFloat);
+    mostrarTexto("infoAporteEmpleado",totalEmpleadoFloat);
+    mostrarTexto("infoTotalNomina",toltalNomina);
+    mostrarRoles();
+}
