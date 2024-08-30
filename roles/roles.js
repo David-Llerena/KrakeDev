@@ -3,6 +3,7 @@ let empleados = [
     {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0}
 ]
 let esNuevo=false
+let roles=[];
 
 mostrarOpcionEmpleado=function(){
     mostrarComponente("divEmpleado");
@@ -250,4 +251,73 @@ calcularRol=function(){
             habilitarComponente("botonGuardar");
         }
     }
+}
+//Se agrega reto 50 parte 6
+buscarRol=function(cedula){
+    let elementoRol=null
+    for(let i=0;i<roles.length;i++){
+        elementoRol=roles[i];
+        if(elementoRol.cedula==cedula){
+            return elementoRol;
+        }
+    }
+    if(elementoRol==null){
+        return elementoRol;
+    }
+
+}
+agregarRol=function(rol){  
+    let rolElemento;
+    if(roles.length==0){
+        roles.push(rol);
+        alert("AGREGADO EXITOSAMENTE");
+    }else{
+        rolElemento=buscarRol(rol.cedula);
+        if(rolElemento==null){
+            roles.push(rol);
+            alert("AGREGADO EXITOSAMENTE");
+        }else{
+            alert("YA EXISTE")
+        }
+    }
+}
+agregarRol=function(rol){  
+    let rolElemento;
+    if(roles.length==0){
+        roles.push(rol);
+        alert("AGREGADO EXITOSAMENTE");
+    }else{
+        rolElemento=buscarRol(rol.cedula);
+        if(rolElemento==null){
+            roles.push(rol);
+            alert("AGREGADO EXITOSAMENTE");
+        }else{
+            alert("YA EXISTE")
+        }
+    }
+}
+calcularAporteEmpleador=function(sueldo){ //sueldo del empleado
+    let resultado=sueldo*11.15;
+    let  aporteIESS=resultado/100;
+    return aporteIESS;
+}
+guardarRol=function(){
+    let pago=recuperarTextoDiv("infoPago");
+    let iess=recuperarTextoDiv("infoIESS");
+    let nombre=recuperarTextoDiv("infoNombre");
+    let cedula=recuperarTextoDiv("infoCedula");
+    let sueldo=recuperarTextoDiv("infoSueldo");
+    let aporteDelEmpleador=calcularAporteEmpleador(sueldo);
+    let rol={};
+    rol.cedula=cedula;
+    rol.nombre=nombre;
+    rol.sueldo=sueldo;
+    rol.valorAPagar=pago;
+    rol.aporteEmpleado=iess;
+    rol.aporteEmpleador=aporteDelEmpleador;
+    agregarRol(rol);
+    alert("GUARDADO EXITOSAMENTE");
+    deshabilitarComponente("botonGuardar");;
+    mostrarTotales();
+    
 }
