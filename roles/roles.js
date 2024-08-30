@@ -1,6 +1,7 @@
 let empleados = [
     {cedula:"1714616123",nombre:"John",apellido:"Cena",sueldo:500.0},
-    {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0}
+    {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0},
+    {cedula:"0926324237",nombre:"David",apellido:"Llerena",sueldo:800.0}
 ]
 let esNuevo=false
 let roles=[];
@@ -10,6 +11,7 @@ mostrarOpcionEmpleado=function(){
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
     mostrarEmpleado();
+    deshabilitarDatos();
 }
 mostrarOpcionRol=function(){
     mostrarComponente("divRol");
@@ -67,7 +69,7 @@ buscarEmpleado=function(cedula){
 }
 agregarEmpleado=function(empleado){
     let nuevoEmpleado;
-    let agregaEmpleado=false;
+    let agregaEmpleado=false
     nuevoEmpleado=buscarEmpleado(empleado.cedula);
     if(nuevoEmpleado == null){
         empleados.push(empleado);
@@ -185,7 +187,6 @@ deshabilitarDatos=function(){
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
 }
-// Se agrega Parte 4 modificar empleado
 ejecutarBusqueda=function(){
     let valorCedula;
     let empleado;
@@ -210,10 +211,9 @@ limpiar=function(){
     mostrarTextoEnCaja("txtNombre","");
     mostrarTextoEnCaja("txtApellido","");
     mostrarTextoEnCaja("txtSueldo","");
-    esNuevo=false;
+    esNuevo=false
     deshabilitarDatos();
 }
-
 buscarPorRol=function(){
     let cedula;
     let empleadoEncontrado;
@@ -252,8 +252,7 @@ calcularRol=function(){
         }
     }
 }
-//Se agrega reto 50 parte 6
-buscarRol=function(cedula){
+buscarRol=function(cedula){ //Cedula Empleado
     let elementoRol=null
     for(let i=0;i<roles.length;i++){
         elementoRol=roles[i];
@@ -265,21 +264,6 @@ buscarRol=function(cedula){
         return elementoRol;
     }
 
-}
-agregarRol=function(rol){  
-    let rolElemento;
-    if(roles.length==0){
-        roles.push(rol);
-        alert("AGREGADO EXITOSAMENTE");
-    }else{
-        rolElemento=buscarRol(rol.cedula);
-        if(rolElemento==null){
-            roles.push(rol);
-            alert("AGREGADO EXITOSAMENTE");
-        }else{
-            alert("YA EXISTE")
-        }
-    }
 }
 agregarRol=function(rol){  
     let rolElemento;
@@ -350,7 +334,7 @@ mostrarTotales=function(){
     let totalEmpleadorFloat;
     let totalEmpleador;
     let totalAPagar;
-    let toltalNomina;
+    let totalNomina;
     for(let i=0;i<roles.length;i++){
         totalEmpleado=roles[i];
         totalEmpleadoFloat=parseFloat(totalEmpleado.aporteEmpleado);
@@ -360,10 +344,10 @@ mostrarTotales=function(){
         totalEmpleadorFloat=totalEmpleadorFloat;
         totalAPagar=totalEmpleadoFloat+totalEmpleadorFloat;
     }
-    toltalNomina=totalAPagar+totalEmpleadoFloat+totalEmpleadorFloat;
+    totalNomina=totalAPagar+totalEmpleadoFloat+totalEmpleadorFloat;
     mostrarTexto("infoTotalPago",totalAPagar);
     mostrarTexto("infoAporteEmpresa",totalEmpleadorFloat);
     mostrarTexto("infoAporteEmpleado",totalEmpleadoFloat);
-    mostrarTexto("infoTotalNomina",toltalNomina);
+    mostrarTexto("infoTotalNomina",totalNomina);
     mostrarRoles();
 }
