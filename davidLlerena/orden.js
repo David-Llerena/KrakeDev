@@ -76,3 +76,13 @@ determinarMenor=function(){
     let menor = encontrarMenor();
     mostrarTexto("lblPersonaMenor", "La persona menor es "+menor.nombre+" con una edad de "+menor.edad);
 }
+
+limpiar=function(){
+    mostrarTexto("lblErrorNombre","");
+    mostrarTexto("lblErrorEdad","");
+    mostrarTexto("lblPersonaMayor","");
+    mostrarTexto("lblPersonaMenor","");
+    mostrarTextoEnCaja("txtNombre","");
+    mostrarTextoEnCaja("txtEdad","");
+
+}
