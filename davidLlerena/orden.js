@@ -14,7 +14,7 @@ agregarPersona=function(){
         mostrarTexto("lblErrorNombre","DEBE TENER AL MENOS TRES CARACTERES");
         return personaSinError=false;
     }
-    if(edadPersona.length < 0 || edadPersona.length>100 ){
+    if(edadPersona.length <=0 || edadPersona.length>100  ){
         mostrarTexto("lblErrorEdad","DEBE TENER UNA EDAD ENTRE 0 Y 100")
         return personaSinError=false;
     }
