@@ -7,16 +7,26 @@
     <link href="orden.css" rel="stylesheet"/>
 </head>
 
-<body>
+<body  onload="mostrarPersonas()">
 
     <h5>Ingrese su Nombre</h5>
     <input type="text" id="txtNombre"></input>
-    <h3  class="contenidoErrores" id="lblErrorNombre">qwq</h3>
+    <h3  class="contenidoErrores" id="lblErrorNombre"></h3>
     <h5>Ingrese su Edad</h5>
     <input type="text" id="txtEdad"></input>
-    <h3 class="contenidoErrores" id="lblErrorEdad">hola</h3>
+    <h3 class="contenidoErrores" id="lblErrorEdad"></h3>
+    <input type="button" value="GUARDAR" onclick="agregarPersona();" />
+    <input type="button" value="ENCONTRAR MAYOR" onclick="determinarMayor();" />
+    <input type="button" value="ENCONTRAR MENOR" onclick="determinarMenor();" />
 
-    <input type="button" value="GUARDAR" />
+    <div id="tablaPersona"></div>
+    <div>
+        <h3 id="lblPersonaMayor"></h3>
+    </div>
+    <div>
+        <h3 id="lblPersonaMenor"></h3>
+    </div>
 
     </body>
  </html>
+
