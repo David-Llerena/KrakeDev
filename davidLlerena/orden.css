@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h5 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+h3 {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-style: italic; /* Añadido: texto en cursiva para mensajes de error */
+}
+
+.contenidoErrores {
+    font-style: italic; /* Añadido: texto en cursiva para el contenido de errores */
+}
+
+/* Estilo para campos con error */
+input:invalid {
+    border-color: #d9534f;
+}
+
+/* Animación para mensajes de error */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h3:not(:empty) {
+    animation: fadeIn 0.5s ease-in-out;
+}
